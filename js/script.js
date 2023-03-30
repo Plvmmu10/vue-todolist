@@ -27,6 +27,9 @@ createApp({
             if (this.newItem != '') {
                 this.todoList.push(newItem)
             }
+        },
+        completedTodo(index) {
+            this.todoList[index].done = true;
         }
     }
 }).mount('#app');
