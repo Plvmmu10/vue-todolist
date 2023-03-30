@@ -37,9 +37,6 @@ createApp({
         completedTodo(index) {
             this.todoList[index].done = true;
         },
-        uncompletedTodo(index) {
-            this.todoList[index].done = false;
-        },
         deleteTodo(index) {
             this.todoList.splice(index, 1)
         }
