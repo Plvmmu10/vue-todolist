@@ -43,7 +43,7 @@
                 <div class="todoListContainer">
                     <ul v-for="(item, index) in todoList" v-if="todoList.length > 0">
                         <li class="bg-black rounded-3 p-1 d-flex align-items-center justify-content-around">
-                            <span class="p-4" @click="completedTodo(index); uncompletedTodo(index)"
+                            <span class="p-4" @click="completedTodo(index)"
                                 :class="item.done ? 'done':''">{{item.text}}</span>
                             <!-- remove button -->
                             <button class="btn btn-outline-danger" @click="deleteTodo(index)"><i

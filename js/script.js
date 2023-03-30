@@ -26,10 +26,13 @@ createApp({
             }
 
             if (this.newTodo != '') {
-                this.todoList.push(newItem)
+                this.todoList.push(newItem);
+                this.newTodo = '';
             } else {
                 this.error = true;
             }
+
+
         },
         completedTodo(index) {
             this.todoList[index].done = true;
