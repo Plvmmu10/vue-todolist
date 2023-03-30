@@ -26,8 +26,8 @@
                 <!-- add item container -->
                 <div class="addItemContainer d-flex align-items-center flex-column">
                     <!-- input div -->
-                    <div>
-                        <input type="text" name="todoItem" id="todoItem" class="mx-2" v-model="newTodo"
+                    <div class="d-flex align-items-center">
+                        <input type="text" name="todoItem" id="todoItem" class="mx-2 rounded-2" v-model="newTodo"
                             @keyup.enter="addItem">
 
                         <button class="btn btn-primary" @click="addItem"><i class="fa-solid fa-add"></i></button>
