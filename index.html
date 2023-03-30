@@ -10,12 +10,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>TodoList</title>
 </head>
 
 <body>
+    <div id="app">
+        <div class="container text-white rounded-3">
+            <!-- Container header with title -->
+            <div class="container-header text-center">
+                <h1>To do List</h1>
+            </div>
 
+            <div class="container-body pt-5 d-flex justify-content-around">
+                <!-- add item container -->
+                <div class="addItemContainer d-flex align-items-center">
+                    <input type="text" name="todoItem" id="todoItem" class="mx-2" v-model="newTodo"
+                        @keyup.enter="addItem">
+
+                    <button class="btn btn-primary" @click="addItem"><i class="fa-solid fa-add"></i></button>
+                </div>
+
+                <!-- toDo list container -->
+                <div class="todoListContainer">
+                    <ul v-for="(item, index) in todoList">
+                        <li class="bg-black rounded-3 p-1 d-flex align-items-center justify-content-around">
+                            <span class="p-4">{{item.text}}</span>
+                            <!-- remove button -->
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
