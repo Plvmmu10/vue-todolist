@@ -16,11 +16,14 @@
 
 <body>
     <div id="app">
-        <div class="container text-white rounded-3 d-flex flex-column justify-content-center align-items-center">
+        <div class="container text-white rounded-3">
             <!-- Container header with title -->
             <div class="container-header text-center pt-3 d-flex align-items-center flex-column justify-content-center">
                 <h1>To do List</h1>
 
+
+            </div>
+            <div class="container-body pt-5 d-flex justify-content-around align-items-center">
                 <!-- add item container -->
                 <div class="addItemContainer ">
                     <!-- input div -->
@@ -31,29 +34,28 @@
                         <button class="btn btn-outline-primary" @click="addItem"><i
                                 class="fa-solid fa-add"></i></button>
                     </div>
+                    <!-- error div -->
+                    <div class="text-center py-2">
+                        <h3 class="text-danger" v-if="error">Don't leave empty!</h3>
+                    </div>
+                </div>
+
+
+
+                <!-- toDo list container -->
+                <div class="todoListContainer d-flex align-items-center flex-column justify-content-center ">
+                    <ul v-for="(item, index) in todoList" v-if="todoList.length > 0">
+                        <li class="bg-black rounded-3 p-2">
+                            <span class="px-2" @click="completedTodo(index);"
+                                :class="item.done ? 'done':''"><strong>{{item.text}}</strong></span>
+                            <!-- remove button -->
+                            <button class="btn btn-outline-danger" @click="deleteTodo(index)"><i
+                                    class="fa-solid fa-skull-crossbones"></i></button>
+                        </li>
+                    </ul>
+                    <h4 class="text-success" v-else>Add something to your list..</h4>
                 </div>
             </div>
-            <div class="container-body pt-5 d-flex justify-content-around align-items-center justify-content-center">
-                <!-- error div -->
-                <div>
-                    <p class="text-danger" v-if="error">Don't leave empty!</p>
-                </div>
-            </div>
-
-            <!-- toDo list container -->
-            <div class="todoListContainer d-flex align-items-center flex-column justify-content-center">
-                <ul v-for="(item, index) in todoList" v-if="todoList.length > 0">
-                    <li class="bg-black rounded-3 p-2 d-flex align-items-center justify-content-between">
-                        <span class="p-4" @click="completedTodo(index);"
-                            :class="item.done ? 'done':''"><strong>{{item.text}}</strong></span>
-                        <!-- remove button -->
-                        <button class="btn btn-outline-danger" @click="deleteTodo(index)"><i
-                                class="fa-solid fa-skull-crossbones"></i></button>
-                    </li>
-                </ul>
-                <h4 class="text-danger" v-else>List is empty!</h4>
-            </div>
-
         </div>
     </div>
 
