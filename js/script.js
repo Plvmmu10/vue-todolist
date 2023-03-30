@@ -30,6 +30,9 @@ createApp({
         },
         completedTodo(index) {
             this.todoList[index].done = true;
+        },
+        deleteTodo(index) {
+            this.todoList.splice(index, 1)
         }
     }
 }).mount('#app');
