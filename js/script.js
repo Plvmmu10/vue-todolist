@@ -24,12 +24,15 @@ createApp({
                 done: false
             }
 
-            if (this.newItem != '') {
-                this.todoList.push(newItem)
+            if (this.newTodo != '') {
+                this.todoList.push(this.newItem)
             }
         },
         completedTodo(index) {
             this.todoList[index].done = true;
+        },
+        uncompletedTodo(index) {
+            this.todoList[index].done = false;
         },
         deleteTodo(index) {
             this.todoList.splice(index, 1)
