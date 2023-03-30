@@ -30,7 +30,8 @@
                         <input type="text" name="todoItem" id="todoItem" class="mx-2 rounded-2" v-model="newTodo"
                             @keyup.enter="addItem">
 
-                        <button class="btn btn-primary" @click="addItem"><i class="fa-solid fa-add"></i></button>
+                        <button class="btn btn-outline-primary" @click="addItem"><i
+                                class="fa-solid fa-add"></i></button>
                     </div>
 
                     <!-- error div -->
@@ -43,7 +44,7 @@
                 <div class="todoListContainer">
                     <ul v-for="(item, index) in todoList" v-if="todoList.length > 0">
                         <li class="bg-black rounded-3 p-2 d-flex align-items-center justify-content-between">
-                            <span class="p-4" @click="completedTodo(index)"
+                            <span class="p-4" @click="completedTodo(index);"
                                 :class="item.done ? 'done':''">{{item.text}}</span>
                             <!-- remove button -->
                             <button class="btn btn-outline-danger" @click="deleteTodo(index)"><i

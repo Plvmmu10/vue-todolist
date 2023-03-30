@@ -25,7 +25,7 @@ createApp({
 
         },
         completedTodo(index) {
-            this.todoList[index].done = true;
+            this.todoList[index].done = !this.todoList[index].done;
         },
         deleteTodo(index) {
             this.todoList.splice(index, 1)
