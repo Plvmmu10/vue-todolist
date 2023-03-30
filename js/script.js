@@ -4,14 +4,7 @@ createApp({
     data() {
         return {
             todoList: [
-                {
-                    text: 'Completare il CSS',
-                    done: false
-                },
-                {
-                    text: 'Riscrivere la function',
-                    done: false
-                }
+
             ],
 
             newTodo: '',
