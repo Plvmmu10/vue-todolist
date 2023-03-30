@@ -14,7 +14,8 @@ createApp({
                 }
             ],
 
-            newTodo: ''
+            newTodo: '',
+            error: ''
         }
     },
     methods: {
@@ -25,7 +26,9 @@ createApp({
             }
 
             if (this.newTodo != '') {
-                this.todoList.push(this.newItem)
+                this.todoList.push(newItem)
+            } else {
+                this.error = true;
             }
         },
         completedTodo(index) {
