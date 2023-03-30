@@ -3,10 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            todoList: [
-
-            ],
-
+            todoList: [],
             newTodo: '',
             error: ''
         }
